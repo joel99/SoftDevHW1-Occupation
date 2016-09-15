@@ -1,6 +1,8 @@
 #!/usr/bin/python
 import random
-import copy
+
+#Winston Venderbush and Joel Ye
+#9/15/16
 
 f = open("occupations.csv", "r")
 
@@ -24,29 +26,12 @@ def randSelect():
 	percentctr = 0.0
 	for key in d:
 		if f < percentctr + d[key]:
-			print "run"
 			return key
 		else:
 			percentctr += d[key]
-			#print "This shouldn't happen"
 
-#print randSelect()
+print randSelect()
 
-
-def checker():
-	d2 = copy.deepcopy(d)
-	for key in d2:
-		d2[key] = 0
-		
-	print d2
-
-	runs = 1000
-	while runs > 0:
-		key = randSelect()
-		d2[key] = d2[key] + 1
-	return d2
-
-print checker()
 
 
 
